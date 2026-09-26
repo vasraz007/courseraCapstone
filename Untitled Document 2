@@ -1,0 +1,23 @@
+                
+#nearby_venues=pd.DataFrame(pd.DataFrame(((results)['response.groups'][0]))['items'][0])['venue'][0]
+#a=pd.DataFrame.from_dict(nearby_venues,orient='index').T
+
+#    print(results)
+#    nearby_venues=pd.DataFrame(pd.DataFrame((results['response.groups'][0]))['items'][0])
+#    nearby_venues=pd.DataFrame(pd.DataFrame(((results)['response.groups'][0]))['items'][0])['venue'][0]
+
+#    try:
+#        nearby_venues=pd.DataFrame.from_dict(pd.DataFrame(pd.DataFrame(results['response.groups'][0])['items'][0])['venue'][0].items()).T
+#    except KeyError:
+#        print(pd.DataFrame(pd.DataFrame((results['response.groups'][0]))['items'][0]))
+#        print(results)
+
+#    nearby_venues=json_normalize(results['response']['groups'][0]['items'])
+#    print(type(nearby_venues))
+#    if not nearby_venues.empty:
+#        if all_results.empty:
+#            all_results=pd.DataFrame(nearby_venues)
+#        else:
+#            all_results=all_results.append(nearby_venues,sort=False)
+
+

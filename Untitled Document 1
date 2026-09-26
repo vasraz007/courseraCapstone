@@ -1,0 +1,31 @@
+Why is the business understanding stage important?
+Your Answer: 
+It helps clarify the goal of the entity asking the question.
+​
+
+#### Looking at this diagram, we immediately spot two outstanding features of the data science methodology.
+The correct answer is: 
+\\ 1. The flowchart is highly iterative.
+\\ 2. The flowchart never ends. 
+
+Why is the analytic approach stage important?
+Your Answer:
+Because it helps identify what type of patterns will be needed to address the question most effectively.
+
+In order to build a very powerful decision tree for the recipe case study, let's take some time to learn more about decision trees.
+Decision trees are built using recursive partitioning to classify the data.
+When partitioning the data, decision trees use the most predictive feature (ingredient in this case) to split the data.
+Predictiveness is based on decrease in entropy - gain in information, or impurity.
+
+
+A tree stops growing at a node when:
+Pure or nearly pure.
+No remaining variables on which to further subset the data.
+The tree has grown to a preselected size limit.
+
+
+Here are some characteristics of decision trees:
+Image
+
+
+Is the data that you collected representative of the problem to be solved?

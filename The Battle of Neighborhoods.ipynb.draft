@@ -1,0 +1,134 @@
+#geolocator = GoogleV3(user_agent="specify_your_app_name_here",domain='maps.googleapis.com',api_key='AIzaSyBFtqy-Jpu6eL2p_oXBknRYJADnnriWvOE')
+
+##########################################################################################################################################
+
+#address = 'Portimão' + ', Portugal'
+#geolocator = Nominatim(user_agent="specify_your_app_name_here",format_string="%s, Portugal",domain='nominatim.openstreetmap.org')
+#geolocator = GoogleV3(user_agent="specify_your_app_name_here",domain='maps.googleapis.com')
+#geolocator = GeoNames(username='vasraz',user_agent='Coursera')
+#address='Silves, Algarve, 8300, Portugal'
+#location = geolocator.geocode(address)
+location = geolocator.geocode(components={"city": "Silves", "country": "PT", "postal_code": "8300"})
+print(location)
+latitude = location.latitude
+print(latitude)
+longitude = location.longitude
+print(longitude)
+
+##########################################################################################################################################
+
+#address = 'Portimão' + ', Portugal'
+#geolocator = Nominatim(user_agent="specify_your_app_name_here",format_string="%s, Portugal",domain='nominatim.openstreetmap.org')
+geolocator = Nominatim(user_agent="specify_your_app_name_here",domain='nominatim.openstreetmap.org')
+address='SILVES, Algarve, 8300, Portugal'
+location = geolocator.geocode(address)
+print(location)
+latitude = location.latitude
+print(latitude)
+longitude = location.longitude
+print(longitude)
+
+##########################################################################################################################################
+
+all_locations=[]
+for ind in new_df.index:
+    address='{}, Algarve, Portugal'.format(new_df['CPALF'][ind])
+#    address='{}, Algarve, {}, Portugal'.format(new_df['CPALF'][ind],new_df['CP4'][ind])
+    try:
+#        geolocator = Nominatim(user_agent="specify_your_app_name_here",format_string="%s, Portugal")
+        gmaps = googlemaps.Client(key='AIzaSyBFtqy-Jpu6eL2p_oXBknRYJADnnriWvOE')
+#        geolocator = Nominatim(user_agent="specify_your_app_name_here",domain='nominatim.openstreetmap.org',timeout=3)
+        location = gmaps.geocode(address)
+#        time.sleep(5)
+    except geopy.exc.GeocoderUnavailable:
+        print('GeocoderUnavailable')
+        print(name)
+    except urllib.error.URLError:
+        print('URLError')
+        print(name)
+    except OSError:
+        print('OSError')
+        print(name)
+
+#    if not location.empty():
+    all_locations.append(location)
+print(len(all_locations))
+
+##########################################################################################################################################
+
+all_results=pd.DataFrame()
+#neighborhoods=[]
+geolocator = Nominatim()
+#for name in df_CC[df_CC['DD']==8]['DESIG']:
+#for name in new_df['CPALF']:
+for location in all_locations:
+#    address = name + ', Portugal'
+#    print(address)
+#    location = geolocator.geocode(address)
+#    print(location)
+
+    result=json_normalize(location)
+ #   print(result['geometry.location.lat'])
+ #   print(result['geometry.location.lng'])
+    latitude = result['geometry.location.lat']
+    longitude = result['geometry.location.lng']
+    
+#    latitude = location.latitude
+#    print(latitude)
+#    longitude = location.longitude
+#    print(longitude)
+
+    url = 'https://api.foursquare.com/v2/venues/explore?&client_id={}&client_secret={}&v={}&ll={},{}&radius={}&limit={}'.format(
+    CLIENT_ID, 
+    CLIENT_SECRET,
+    VERSION,
+    latitude,
+    longitude,
+    999,
+    50)
+    print(url)
+
+#    neighborhoods
+#    results = requests.get(url)
+    results = requests.get(url).json()
+    nearby_venues=json_normalize(results['response']['groups'][0]['items'])
+#    print(type(nearby_venues))
+    if not nearby_venues.empty:
+        if all_results.empty:
+            all_results=pd.DataFrame(nearby_venues)
+#            print('1')
+        else:
+            all_results=all_results.append(nearby_venues,sort=False)
+#            print('2')
+print(len(all_results))
+
+##########################################################################################################################################
+
+# create map using latitude and longitude values
+map_Algarve = folium.Map(location=[latitude, longitude], zoom_start=10)
+
+#neighborhoods = Secciones
+
+# add markers to map
+#for lat, lng, borough, neighborhood in zip(neighborhoods['Latitud'],
+#                                           neighborhoods['Longitud'],
+#                                           neighborhoods['CODDC'],
+#                                           neighborhoods['CODSC']):
+#for lat, lng, borough, neighborhood in zip(nearby_venues['venue.location.lat'],
+for lat, lng, borough in zip(all_results['venue.location.lat'],
+                                           all_results['venue.location.lng'],
+#                                           nearby_venues['venue.location.city'],
+                                           all_results['venue.location.city']):
+#    label = 'DC: {}, SC: {}'.format(neighborhood, borough)
+    label = 'City: {}'.format(borough)
+    label = folium.Popup(label, parse_html=True)
+    folium.CircleMarker(
+        [lat, lng],
+        radius=5,
+        popup=label,
+        color='blue',
+        fill=True,
+        fill_color='#3186cc',
+        fill_opacity=0.7).add_to(map_Algarve)  
+    
+map_Algarve
