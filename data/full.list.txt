@@ -1,32 +1,3 @@
-
-./full_webstats_cbpol_d_dataflow_csv_row.zip.dir/WEBSTATS_CBPOL_D_DATAFLOW_csv_row.csv
-./full_webstats_cbpol_m_dataflow_csv.zip.dir/WEBSTATS_CBPOL_M_DATAFLOW_csv_col.csv
-./full_bis_total_credit_csv.zip.dir/WEBSTATS_TOTAL_CREDIT_DATAFLOW_csv_col.csv
-./full_webstats_credit_gap_dataflow_csv.zip.dir/WEBSTATS_CREDIT_GAP_DATAFLOW_csv_col.csv
-./full_webstats_eer_d_dataflow_csv_row.zip.dir/WEBSTATS_EER_D_DATAFLOW_csv_row.csv
-./full_bis_eer_csv.zip.dir/BISWEB_EERDATAFLOW_csv_col.csv
-./full_bis_selected_pp_csv.zip.dir/WEBSTATS_SELECTED_PP_DATAFLOW_csv_col.csv
-./full_bis_xtd_csv.zip.dir/WEBSTATS_XTD_DATAFLOW_csv_col.csv
-./full_bis_long_pp_csv.zip.dir/WEBSTATS_LONG_PP_DATAFLOW_csv_col.csv
-./full_bis_gli_csv.zip.dir/WEBSTATS_GLI_DATAFLOW_csv_col.csv
-./full_bis_otc_csv.zip.dir/WEBSTATS_OTC_DATAFLOW_csv_col.csv
-./full_bis_cbs_csv.zip.dir/WEBSTATS_CBS_DATAFLOW_csv_col.csv
-./full_BIS_DER_csv.zip.dir/WEBSTATS_DER_DATAFLOW_csv_col.csv
-./full_bis_rb_csv.zip.dir/CPMI_CT1.csv
-./full_bis_rb_csv.zip.dir/CPMI_CT2.csv
-./full_bis_rb_csv.zip.dir/BIS_MACRO.csv
-./full_bis_rb_csv.zip.dir/CPMI_INSTITUTIONS.csv
-./full_bis_rb_csv.zip.dir/CPMI_CASHLESS.csv
-./full_bis_rb_csv.zip.dir/CPMI_DEVICES.csv
-./full_bis_rb_csv.zip.dir/CPMI_SYSTEMS.csv
-./full_bis_rb_csv.zip.dir/CPMI_PARTICIPANTS.csv
-./full_webstats_long_cpi_dataflow_csv.zip.dir/WEBSTATS_LONG_CPI_DATAFLOW_csv_col.csv
-./full_webstats_xru_current_d_dataflow_csv_col.zip.dir/WEBSTATS_XRU_CURRENT_D_DATAFLOW_csv_col.csv
-./full_webstats_eer_d_dataflow_csv_col.zip.dir/WEBSTATS_EER_D_DATAFLOW_csv_col.csv
-./full_webstats_xru_current_d_dataflow_csv_row.zip.dir/WEBSTATS_XRU_CURRENT_D_DATAFLOW_csv_row.csv
-./full_bis_debt_sec2_csv.zip.dir/WEBSTATS_DEBTSEC_DATAFLOW_csv_col.csv
-./full_webstats_cbpol_d_dataflow_csv_col.zip.dir/WEBSTATS_CBPOL_D_DATAFLOW_csv_col.csv
-./full_bis_lbs_diss_csv.zip.dir/WEBSTATS_LBS_D_PUB_DATAFLOW_csv_col.csv
-./full_webstats_xru_current_dataflow_csv.zip.dir/WEBSTATS_XRU_CURRENT_DATAFLOW_csv_col.csv
-./full_bis_dsr_csv.zip.dir/WEBSTATS_DSR_DATAFLOW_csv_col.csv
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:cb3db0822027fbf261dcaf36265c7071c684e7a1bc055d96434dc756f6bc7b43
+size 2024
