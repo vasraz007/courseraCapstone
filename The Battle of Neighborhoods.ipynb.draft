@@ -1,4 +1,4 @@
-#geolocator = GoogleV3(user_agent="specify_your_app_name_here",domain='maps.googleapis.com',api_key='AIzaSyBFtqy-Jpu6eL2p_oXBknRYJADnnriWvOE')
+#geolocator = GoogleV3(user_agent="specify_your_app_name_here",domain='maps.googleapis.com',api_key='bla-bla')
 
 ##########################################################################################################################################
 
@@ -36,7 +36,7 @@ for ind in new_df.index:
 #    address='{}, Algarve, {}, Portugal'.format(new_df['CPALF'][ind],new_df['CP4'][ind])
     try:
 #        geolocator = Nominatim(user_agent="specify_your_app_name_here",format_string="%s, Portugal")
-        gmaps = googlemaps.Client(key='AIzaSyBFtqy-Jpu6eL2p_oXBknRYJADnnriWvOE')
+        gmaps = googlemaps.Client(key='bla-bla')
 #        geolocator = Nominatim(user_agent="specify_your_app_name_here",domain='nominatim.openstreetmap.org',timeout=3)
         location = gmaps.geocode(address)
 #        time.sleep(5)
